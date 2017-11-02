@@ -6,8 +6,8 @@ const char color[6] = { 'w','y','b','g','r','o' };
 //color reference 0:w,1:y,2:b,3:g,4:r,5:o
 void fill(int col, int arr[][2])
 {
-	for (int i = 0;i<2;i++)
-		for (int j = 0;j<2;j++)
+	for (int i = 0; i<2; i++)
+		for (int j = 0; j<2; j++)
 			arr[i][j] = col;
 }
 void reset()
@@ -21,8 +21,8 @@ void reset()
 }
 void pFace(int arr[][2])
 {
-	for (int i = 0;i<2;i++) {
-		for (int j = 0;j<2;j++)
+	for (int i = 0; i<2; i++) {
+		for (int j = 0; j<2; j++)
 			printf("%c ", color[arr[i][j]]);
 		printf("\n");
 	}
@@ -83,17 +83,75 @@ void turnR()
 void turnU() {
 
 	turnFace(u);
-	int x ,y;
 
+	int x = f[0][0];
+	int y = f[0][1];
 
+	f[0][0] = r[0][0];
+	f[0][1] = r[0][1];
+
+	r[0][0] = b[1][1];
+	r[0][1] = b[1][0];
+
+	b[1][1]= l[0][0];
+	b[1][0]= l[0][1];
+
+	l[0][0] = x;
+	l[0][0] = y;
+}
+void turnF()
+{
+	turnFace(f);
+	int x = u[1][0];
+	int y = u[1][1];
+	
+	u[1][0] = l[1][1];
+	u[1][1] = l[0][1];
+
+	l[1][1] = d[0][1];
+	l[0][1] = d[0][0];
+
+	d[0][1] = r[0][0];
+	d[0][0] = r[1][0];
+
+	r[0][0] = x;
+	r[1][0] = y;
+}
+bool allSame(int arr[][2])
+{
+	int x = arr[0][0];
+	for (int i = 0; i < 2; i++)
+		for (int j = 0; j < 2; j++)
+			if (arr[i][j] != x)
+				return false;
+	return true;
+}
+bool isSolved()
+{
+	if (!allSame(u))
+		return false;
+	if (!allSame(d))
+		return false;
+	if (!allSame(r))
+		return false;
+	if (!allSame(l))
+		return false;
+	if (!allSame(f))
+		return false;
+	if (!allSame(b))
+		return false;
+	return true;
 }
 int main()
 {
 	reset();
-	for (int i = 0;i<4;i++)
+	while (1)
 	{
-		printf("\nTurn No. %d\n", i + 1);
 		turnR();
+		turnF();
+		turnU();
 		pCube();
+		if (isSolved())
+			break;
 	}
 }
