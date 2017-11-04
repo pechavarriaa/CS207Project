@@ -1,6 +1,6 @@
 #include <cstdio>
 using namespace std;
-class cube3 {
+class cube {
 protected:
 	char r[3][3]={{'b','b','b'},{'b','b','b'},{'b','b','b'}};
 	char l[3][3]={{'g','g','g'},{'g','g','g'},{'g','g','g'}};
