@@ -1,14 +1,13 @@
 #include <cstdio>
-#include <iostream>
 using namespace std;
 class cube3 {
 protected:
-	char r[3][3];
-	char l[3][3];
-	char f[3][3];
-	char b[3][3];
-	char d[3][3];
-	char u[3][3];
+	char r[3][3]={{'b','b','b'},{'b','b','b'},{'b','b','b'}};
+	char l[3][3]={{'g','g','g'},{'g','g','g'},{'g','g','g'}};
+	char f[3][3]={{'r','r','r'},{'r','r','r'},{'r','r','r'}};
+	char b[3][3]={{'o','o','o'},{'o','o','o'},{'o','o','o'}};
+	char d[3][3]={{'y','y','y'},{'y','y','y'},{'y','y','y'}};
+	char u[3][3]={{'w','w','w'},{'w','w','w'},{'w','w','w'}};
 public:
 	void fillFace(char col, char arr[][3]){
 		for(int i=0;i<3;i++)
@@ -107,6 +106,11 @@ public:
 	}
 	void F_move(){
 		int x,y,z;
+
+		x = l[0][2];
+		y =	l[1][2];
+		z	=	l[2][2];
+
 
 		l[0][2] = d[0][0];
 		l[1][2] = d[0][1];
@@ -243,7 +247,7 @@ public:
 		Y_rotation();
 		R_move();
 		for(int i=0;i<3;i++)
-		Y_rotation();
+			Y_rotation();
 	}
 	void D_move(){
 		X_rotation();
@@ -275,38 +279,3 @@ public:
 			return true;
 	}
 };
-int main()
-{
-	cube3 myCube;
-
-	myCube.resetCube();
-	myCube.printCube();
-	//Spiral Pattern moves
-	for(int i=0;i<3;i++)
-		myCube.L_move();
-	for(int i=0;i<3;i++)
-		myCube.B_move();
-	myCube.D_move();
-	myCube.U_move();
-	myCube.R_move();
-	for(int i=0;i<3;i++)
-		myCube.U_move();
-	for(int i=0;i<3;i++)
-		myCube.R_move();
-	for(int i=0;i<2;i++)
-		myCube.D_move();
-	for(int i=0;i<2;i++)
-		myCube.R_move();
-	myCube.D_move();
-	myCube.L_move();
-	for(int i=0;i<3;i++)
-		myCube.D_move();
-	for(int i=0;i<3;i++)
-		myCube.L_move();
-	for(int i=0;i<3;i++)
-		myCube.R_move();
-	myCube.F_move();
-	myCube.U_move();
-
-	myCube.printCube();
-}
