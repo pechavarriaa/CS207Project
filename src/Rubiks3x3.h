@@ -42,6 +42,7 @@ public:
 		printFace(l);
 		printf("\nRight\n");
 		printFace(r);
+		printf("\n");
 	}
 	void rotateFace(char arr[][3]){
 		int x = arr[0][0];
@@ -279,3 +280,33 @@ public:
 			return true;
 	}
 };
+void moveCube(cube & myCube,int times,char mv)
+{
+  for(int i=0;i<times;i++)
+  {
+    if(mv == 'R')
+      myCube.R_move();
+    else if(mv == 'L')
+      myCube.L_move();
+    else if(mv == 'U')
+      myCube.U_move();
+    else if(mv == 'B')
+      myCube.B_move();
+    else if(mv == 'F')
+      myCube.F_move();
+    else if(mv == 'D')
+      myCube.D_move();
+    else if(mv == 'Y')
+      myCube.Y_rotation();
+    else if(mv == 'X')
+      myCube.X_rotation();
+    else if(mv == 'Z')
+      myCube.Z_rotation();
+    else if(mv == 'M')
+      myCube.M_move();
+    else if(mv == 'E')
+      myCube.E_move();
+    else if(mv == 'S')
+      myCube.S_move();
+  }
+}
