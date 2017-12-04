@@ -1,50 +1,31 @@
-#include <cstdio>
-using namespace std;
 class cube {
-protected:
+public:
 	char r[3][3]={{'b','b','b'},{'b','b','b'},{'b','b','b'}};
 	char l[3][3]={{'g','g','g'},{'g','g','g'},{'g','g','g'}};
 	char f[3][3]={{'r','r','r'},{'r','r','r'},{'r','r','r'}};
 	char b[3][3]={{'o','o','o'},{'o','o','o'},{'o','o','o'}};
 	char d[3][3]={{'y','y','y'},{'y','y','y'},{'y','y','y'}};
 	char u[3][3]={{'w','w','w'},{'w','w','w'},{'w','w','w'}};
-public:
-	void fillFace(char col, char arr[][3]){
+
+	void fillFace(char col, char arr[][3])
+	{
 		for(int i=0;i<3;i++)
 			for(int j=0;j<3;j++)
 				arr[i][j]=col;
 	}
-	void resetCube(){
+ 
+	void resetCube()
+	{
 		fillFace('b',r);
 		fillFace('g',l);
 		fillFace('r',f);
 		fillFace('o',b);
 		fillFace('y',d);
 		fillFace('w',u);
-	};
-	void printFace(char arr[][3]){
-		for(int i=0;i<3;i++){
-			for(int j=0;j<3;j++)
-				printf("%c ",arr[i][j]);
-			printf("\n");
-		}
-	}
-	void printCube(){
-		printf("\nFront\n");
-		printFace(f);
-		printf("\nBack\n");
-		printFace(b);
-		printf("\nUp\n");
-		printFace(u);
-		printf("\nDown\n");
-		printFace(d);
-		printf("\nLeft\n");
-		printFace(l);
-		printf("\nRight\n");
-		printFace(r);
-		printf("\n");
-	}
-	void rotateFace(char arr[][3]){
+	};  
+
+	void rotateFace(char arr[][3])
+	{
 		int x = arr[0][0];
 		arr[0][0] = arr[2][0];
 		arr[2][0] = arr[2][2];
@@ -57,7 +38,8 @@ public:
 		arr[1][2] = arr[0][1];
 		arr[0][1] = x;
 	}
-	void R_move(){
+	void R_move()
+	{
 		int x,y,z;
 		x = f[0][2];
 		y = f[1][2];
@@ -81,7 +63,8 @@ public:
 
 		rotateFace(r);
 	}
-	void U_move(){
+	void U_move()
+	{
 		int x,y,z;
 		x = f[0][0];
 		y = f[0][1];
@@ -105,7 +88,8 @@ public:
 
 		rotateFace(u);
 	}
-	void F_move(){
+	void F_move()
+	{
 		int x,y,z;
 
 		x = l[0][2];
@@ -131,7 +115,8 @@ public:
 
 		rotateFace(f);
 	}
-	void M_move(){
+	void M_move()
+	{
 		int x,y,z;
 		x = f[0][1];
 		y = f[1][1];
@@ -153,8 +138,8 @@ public:
 		d[1][1] = y;
 		d[2][1] = z;
 	}
-	void E_move(){
-
+	void E_move()
+	{
 		int x,y,z;
 		x = f[1][0];
 		y = f[1][1];
@@ -176,10 +161,9 @@ public:
 		r[1][1] = y;
 		r[1][2] = z;
 	}
-	void S_move(){
-
+	void S_move()
+	{
 		int x,y,z;
-
 		x = u[1][0];
 		y = u[1][1];
 		z = u[1][2];
@@ -200,12 +184,14 @@ public:
 		r[1][1] = y;
 		r[2][1] = z;
 	}
-	void copyFace(char x[][3],char y[][3]){
+	void copyFace(char x[][3],char y[][3])
+	{
 		for(int i=0;i<3;i++)
 			for(int j=0;j<3;j++)
 					x[i][j] = y[i][j];
 	}
-	void Y_rotation(){
+	void Y_rotation()
+	{
 		char arr[3][3];
 			copyFace(arr,f);
 			copyFace(f,r);
@@ -216,7 +202,8 @@ public:
 			for(int i=0;i<3;i++)
 			rotateFace(d);
 	}
-	void X_rotation(){
+	void X_rotation()
+	{
 		R_move();
 		for(int i=0;i<3;i++)
 			M_move();
@@ -227,7 +214,8 @@ public:
 		for(int i=0;i<2;i++)
 			Y_rotation();
 	}
-	void Z_rotation(){
+	void Z_rotation()
+	{
 		for(int i=0;i<2;i++)
 			Y_rotation();
 		for(int i=0;i<3;i++)
@@ -237,26 +225,30 @@ public:
 			S_move();
 			F_move();
 	}
-	void L_move(){
+	void L_move()
+	{
 		Y_rotation();
 		Y_rotation();
 		R_move();
 		Y_rotation();
 		Y_rotation();
 	}
-	void B_move(){
+	void B_move()
+	{
 		Y_rotation();
 		R_move();
 		for(int i=0;i<3;i++)
 			Y_rotation();
 	}
-	void D_move(){
+	void D_move()
+	{
 		X_rotation();
 		F_move();
 		for(int i=0;i<3;i++)
 		X_rotation();
 	}
-	bool faceSolved(char arr[][3]){
+	bool faceSolved(char arr[][3])
+	{
 		char x = arr[0][0];
 		for(int i=0;i<3;i++)
 			for(int j=0;j<3;j++)
@@ -264,7 +256,8 @@ public:
 					return false;
 		return true;
 	}
-	bool isSolved(){
+	bool isSolved()
+	{
 		if(!faceSolved(r))
 			return false;
 		if(!faceSolved(l))
@@ -279,34 +272,34 @@ public:
 			return false;
 			return true;
 	}
+	void moveCube(int times,char mv)
+	{
+	  for(int i=0;i<times;i++)
+	  {
+	    if(mv == 'R')
+	      R_move();
+	    else if(mv == 'L')
+	      L_move();
+	    else if(mv == 'U')
+	      U_move();
+	    else if(mv == 'B')
+	      B_move();
+	    else if(mv == 'F')
+	      F_move();
+	    else if(mv == 'D')
+	      D_move();
+	    else if(mv == 'Y')
+	      Y_rotation();
+	    else if(mv == 'X')
+	      X_rotation();
+	    else if(mv == 'Z')
+	      Z_rotation();
+	    else if(mv == 'M')
+	      M_move();
+	    else if(mv == 'E')
+	      E_move();
+	    else if(mv == 'S')
+	      S_move();
+	  }
+	}
 };
-void moveCube(cube & myCube,int times,char mv)
-{
-  for(int i=0;i<times;i++)
-  {
-    if(mv == 'R')
-      myCube.R_move();
-    else if(mv == 'L')
-      myCube.L_move();
-    else if(mv == 'U')
-      myCube.U_move();
-    else if(mv == 'B')
-      myCube.B_move();
-    else if(mv == 'F')
-      myCube.F_move();
-    else if(mv == 'D')
-      myCube.D_move();
-    else if(mv == 'Y')
-      myCube.Y_rotation();
-    else if(mv == 'X')
-      myCube.X_rotation();
-    else if(mv == 'Z')
-      myCube.Z_rotation();
-    else if(mv == 'M')
-      myCube.M_move();
-    else if(mv == 'E')
-      myCube.E_move();
-    else if(mv == 'S')
-      myCube.S_move();
-  }
-}
