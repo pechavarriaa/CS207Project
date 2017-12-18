@@ -17,5 +17,6 @@ Source code and documentation for 3x3 Led-Cube
 ### Software
 - Arduino IDE
 - FastLED library https://github.com/FastLED/FastLED
+- Rubiks3x3.h Header from this repository 
 - Android Studio (optional to make custom app for the cube)
           
