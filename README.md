@@ -25,8 +25,8 @@ First start by 3D printing the cube from 3D files folder. Then
 assemble 9 neopixels per face from the cube. Then solder the neopixels
 in this order 
 
-![Soldering Order]<img src="https://github.com/pechavarriaa/CS207Project/blob/master/img/SolderingOrder.JPG" width="200px" height="200px" />
-![Soldering Order](https://github.com/pechavarriaa/CS207Project/blob/master/img/SolderingOrder.JPG | width=48)
+![Soldering Order]<img src="https://github.com/pechavarriaa/CS207Project/blob/master/img/SolderingOrder.JPG" width="600px" height="600px" align="middle"/>
+
 (note that one has to solder 5v with 5v from one led to another, Dout to Din, and Gnd to Gnd).
 
 After having all 6 faces ready, Solder the last neopixel from the Down face to the first of the Front face, then 
