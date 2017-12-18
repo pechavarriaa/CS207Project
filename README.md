@@ -52,6 +52,7 @@ Download any Android app from Google Play to send commands to the hc-05 module, 
 ## Using the Cube
 
 Once the assemble steps are done, send the following commands to use the cube:
+
 -reset: set the cube to the original state
 -r: right move
 -f: front move
