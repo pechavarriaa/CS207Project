@@ -9,6 +9,7 @@ Source code and documentation for 3x3 Led-Cube
 - Arduino nano
 - HC-05/HC-06 Bluetooth Module
 - 7.4v 2200mAh lipo battery
+- Lipo Battery Beeper
 - Android Phone
 - Paper Card (to make diffusers)
 - Magnets
