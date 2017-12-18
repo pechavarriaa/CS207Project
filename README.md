@@ -53,21 +53,22 @@ Download any Android app from Google Play to send commands to the hc-05 module, 
 
 Once the assemble steps are done, send the following commands to use the cube:
 #### Moves
--reset-> set the cube to the original state
--r -> right move
--f: front move
--b: back move
--l: left move
--u: up move
--d: down move
--m: middle layer move
--e: middle layer move
--s: middle layer move
--x: rotate the cube on X-axis
--y: rotate the cube on Y-axis
--z: rotate the cube on Z-axis
--k: turn off the lights
--g: animations start and after animations, the cube get to original state
+
+- reset: set the cube to the original state
+- r: right move
+- f: front move
+- b: back move
+- l: left move
+- u: up move
+- d: down move
+- m: middle layer move
+- e: middle layer move
+- s: middle layer move
+- x: rotate the cube on X-axis
+- y: rotate the cube on Y-axis
+- z: rotate the cube on Z-axis
+- k: turn off the lights
+- g: animations start and after animations, the cube get to original state
 
 After sending any command, send an 'O' to finalize the command.
 
