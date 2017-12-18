@@ -11,7 +11,7 @@ Source code and documentation for 3x3 Led-Cube
 - Android Phone
 - Paper Card (to make diffusers)
 - Magnets
-- 3d printed parts from STL file
+- 3D printed parts from STL file
 - 24 M4 bolts and 24 M4 nuts
   
 ### Software
@@ -21,3 +21,6 @@ Source code and documentation for 3x3 Led-Cube
 - Android Studio (optional to make custom app for the cube)
           
 ## Assemble
+First start by 3D printing the cube from 3D files folder. Then
+assemble 9 neopixels per face from the cube. Then solder the neopixels
+in this order [[https://github.com/pechavarriaa/CS207Project/blob/master/img/SolderingOrder.JPG|alt=SolderingOrder]]
