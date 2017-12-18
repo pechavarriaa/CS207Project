@@ -26,7 +26,7 @@ assemble 9 neopixels per face from the cube. Then solder the neopixels
 in this order 
 
 ### Soldering
-<img src="https://github.com/pechavarriaa/CS207Project/blob/master/img/SolderingOrder.JPG" width="400px" height="400px"   align="middle"/>
+<img src="https://github.com/pechavarriaa/CS207Project/blob/master/img/SolderingOrder.JPG" width="400px" align="middle"/>
 
 (note that one has to solder 5v with 5v from one led to another, Dout to Din, and Gnd to Gnd).
 
