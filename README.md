@@ -61,9 +61,9 @@ Once the assemble steps are done, send the following commands to use the cube:
 - l: left move
 - u: up move
 - d: down move
-- m: middle layer move
-- e: middle layer move
-- s: middle layer move
+- m: middle layer move on X-axis
+- e: middle layer move on Y-axis
+- s: middle layer move on Z-axis
 - x: rotate the cube on X-axis
 - y: rotate the cube on Y-axis
 - z: rotate the cube on Z-axis
