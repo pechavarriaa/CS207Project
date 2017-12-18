@@ -23,4 +23,4 @@ Source code and documentation for 3x3 Led-Cube
 ## Assemble
 First start by 3D printing the cube from 3D files folder. Then
 assemble 9 neopixels per face from the cube. Then solder the neopixels
-in this order ![Soldering Order](https://github.com/pechavarriaa/CS207Project/blob/master/img/SolderingOrder.JPG){:height="700px" width="400px"}
+in this order ![Soldering Order](https://github.com/pechavarriaa/CS207Project/blob/master/img/SolderingOrder.JPG){:height="50%" width="50%"}
