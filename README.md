@@ -16,5 +16,6 @@ Source code and documentation for 3x3 Led-Cube
   
 ### Software
 - Arduino IDE
+- FastLED library https://github.com/FastLED/FastLED
 - Android Studio (optional to make custom app for the cube)
           
